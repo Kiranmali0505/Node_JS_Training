@@ -10,8 +10,7 @@ let author= {
  
  }
  
- 
- //Showing newly added Author Deatils 
+
  function DeleteAuthor(id){
      if(id>0 && id!=null)
      {
@@ -23,5 +22,5 @@ let author= {
      }
   
  }
- //Calling function
+
  DeleteAuthor(1)
