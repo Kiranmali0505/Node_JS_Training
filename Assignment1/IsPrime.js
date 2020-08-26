@@ -1,5 +1,6 @@
 //wether given number prime or not
-var num =promt("Please Enter the number:",2);
+var num =100;
+function isprimeOne(num){
 if(num>1 && num!=null)
 {
     if(num===2)
@@ -8,16 +9,18 @@ if(num>1 && num!=null)
     }
     else if(num>1)
     {
-       if( num% num!==0)
+       if( num%i==0)
        return true;
     }
     else{
         return false;
     }
 }
+}
 ///Write a function to find and return all primes in a given range
+var a=200; var b=300;
 
-function isPrime(num){
+function isPrime(a,b){
     for(var i=2;i<num;i++)
     {
         if(num%i===0)
@@ -26,7 +29,8 @@ function isPrime(num){
     }
 }
 //find_primes(100,200) --> returns all primes between 100 and 200
-function isprime(num)
+var num=100;
+function isprime1(num)
 {
     for (var i=num;i<200;i++)
     {
@@ -36,7 +40,8 @@ function isprime(num)
     }
 }
 //find_primes(100) ---> return all primes under 100
-function isprime(num){
+var num=3;
+function isprime2(num){
     for(var i=2;i<100;i++)
     {
         if(num%i!==0){
@@ -44,9 +49,9 @@ return num;
         }
     }
 }
-
+var a=20;b=30;
 //Write a function to accept multiple arguments and return all values that are prime.
-function isprime(a,b){
+function isprime3(a,b){
     for(var i=2;i<b;i++){
         if(a%i!==0){
             return true;
