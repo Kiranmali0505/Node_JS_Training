@@ -1,29 +1,16 @@
-//Created author object for adding new author details 
-let author= {
-   id :1,
-   Name:'Kiran',
-   Biography:'ABS',
-   Birthdate:'05/05/19960',
-   Email:'Kiran.Mali@ltts.com',
-   PhotographUrl:'abc.jpg',
-   lstBooks:["Physics","Chemistry","Maths"]
+
+
+function AddAuthor(id,Name,Biography,Birthdate,Email,PhotographUrl,lstBooks){
+   this.id=id;
+   this.Name=Name;
+   this.Biography=Biography;
+   this.Email=Email;
+   this.Birthdate=Birthdate;
+   this.PhotographUrl=PhotographUrl;
+   this.lstBooks=lstBooks;
 
 }
-
-
-//Showing newly added Author Deatils 
-function addAuthor(_author){
-console.log("Added Author Details Are :");
-console.log(`Id : ${_author.id}\t
- Name:${_author.Name}\t
- Biography:${_author.Biography}\t
- Birthdate:${_author.Birthdate}\t
- Email:${_author.Email}\t
- PhotographUrl:${_author.PhotographUrl}\t
- `);
-   
-    
-}
-//Calling function
-addAuthor(author)
+  
+   let _author=new AddAuthor(1,'Kiran','ABS','05/05/19960','Kiran.Mali@ltts.com','abc.jpg','Physics');
+   console.log(_author);
 
