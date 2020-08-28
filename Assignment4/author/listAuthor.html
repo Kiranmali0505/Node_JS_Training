@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+<script>
+  function pageRedirect() {
+    alert("Inprocess")
+  }      
+</script>
+</head>
+<body>
+
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Birthdate</th>
+    <th>Biography</th>
+    <th>PhographUrl</th>
+    <th>Actions</th>
+    
+    
+  </tr>
+  <tr>
+    <td>Author-A</td>
+    <td>Author-A@gmail.com</td>
+    <td>05/05/1996</td>
+    <td>Abc</td>
+    <td>Abc.jpg</td>
+    <td><button style="color:blue"onclick="pageRedirect()">Edit</button>
+      <button style="color:red" onclick="pageRedirect()">Remove </button>
+</td>
+  </tr>
+  <tr>
+    <td>Author-B</td>
+    <td>Author-B@gmail.com</td>
+    <td>05/05/1996</td>
+    <td>Abc</td>
+    <td>Abc.jpg</td>
+    <td><button style="color:blue"onclick="pageRedirect()">Edit</button>
+      <button style="color:red" onclick="pageRedirect()">Remove </button>
+      </td>
+
+  
+</tr>
+  <tr>
+    <td>Author-C</td>
+    <td>Author-C@gmail.com</td>
+    <td>05/05/1996</td>
+    <td>Abc</td>
+    <td>Abc.jpg</td>
+    <td><button style="color:blue"onclick="pageRedirect()">Edit</button>
+      <button style="color:red" onclick="pageRedirect()">Remove </button>
+      </td>
+  <tr>
+    <td>Author-D</td>
+    <td>Author-D@gmail.com</td>
+    <td>05/05/1996</td>
+    <td>Abc</td>
+    <td>Abc.jpg</td>
+    <td><button style="color:blue">Edit <i class="fa fa-trash-o"></i></button>
+      <button style="color:red">Remove <i class="fa fa-trash-o"></i></button>
+  </tr>
+  <tr>
+    <td>Author-E</td>
+    <td>Author-E@gmail.com</td>
+    <td>05/05/1996</td>
+    <td>Abc</td>
+    <td>Abc.jpg</td>
+     <td><button style="color:blue"onclick="pageRedirect()">Edit</button>
+      <button style="color:red" onclick="pageRedirect()">Remove </button>
+      </td>
+  </tr>
+</table>
+
+</body>
+</html>
