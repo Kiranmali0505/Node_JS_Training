@@ -1,0 +1,18 @@
+<p>book-info works!</p>
+<h1>{{book.title}}
+    <button ng-click="toggleImage()">Image</button>
+    <div class="col-md-6">
+        <ul class='meta-lists'>
+            <li>Author:{{book.author}}</li>
+            <li>Price:{{book.price}}</li>
+            <li>Rating:{{book.rating}}</li>
+            <img>Image:{{book.cover}}
+        </ul>
+        <hr/>
+    </div>
+    <div class='descrition'>
+        {{book.description}}
+    </div>
+    <div class='tag'>
+        {{book.tag}}
+    </div>
