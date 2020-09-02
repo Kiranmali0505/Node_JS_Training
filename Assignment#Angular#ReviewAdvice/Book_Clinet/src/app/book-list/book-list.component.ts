@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Book} from '../service/book'; 
+import { RangeInfo } from '../ca-range/ca-range.component';
+import { BooksWebAppComponent } from '../books-web-app.component';
 
 
 @Component({
@@ -12,8 +14,22 @@ export class BookListComponent implements OnInit {
   public showImages=true;
   public books: Book[];
   
+  public imageWidth=120;
+  
   constructor() { 
 
+  
+
+
+  }
+
+  
+
+  toggleImages(){
+    this.showImages=!this.showImages;
+  }
+
+  ngOnInit(): void {
     this.books=[
       {
         "title": "The Accursed God",
@@ -22,28 +38,34 @@ export class BookListComponent implements OnInit {
         "bookId": "00108",
         "price": 199,
         "rating": 4.8,
-        "cover": "/assets/images/books/the-accursed-god-w.jpg",
-        "tags": "Indian Epic, Mahabharata, Book Series"
+        "releaseDate":'01/15/2020',
+        "cover": "the-accursed-god-w.jpg",
+        "tags": "Indian Epic, Mahabharata, Book Series",
+        "review":"Must Watch"
       },
       {
         "title": "The Count of Monte Cristo",
         "author": "Alexandre Dumas",
         "description": "The story of a person wrongly implicated for a false crime and is send to prison. He returns  to seek the vengeane, love and justice.",
         "bookId": "7126",
+        "releaseDate":'01/04/1836',
         "price": 450,
         "rating": 4.8,
-        "cover": "/assets/images/books/7126.jpg",
-        "tags": "Crime,Adventure,Classic,Best-Seller,Revenge,Justice"
+        
+        "tags": "Crime,Adventure,Classic,Best-Seller,Revenge,Justice",
+        "review":"Good"
       },
       {
         "title": "Kane And Abel",
         "author": "Jeffrey Archer",
         "description": "story of two men born on the same date on opposite side of the globe and economy and years later fate brings them for a head on collission. The best selling book by the author.",
         "bookId": "78983",
+        "releaseDate": '01/05/1977',
         "price": 220,
         "rating": 3.5,
-        "cover": "/assets/images/books/78983.jpg",
-        "tags": "best-seller,chronology"
+        
+        "tags": "best-seller,chronology",
+        "review":"Average"
       },
       {
         "title": "Rashmirathi",
@@ -51,42 +73,25 @@ export class BookListComponent implements OnInit {
         "description": "A poetic tale of Karna of Mahabharat. The seven chapter gives a glimpse of the life and harship of one of the greatest warrior of his time",
         "bookId": "10588193",
         "price": 450,
+        "releaseDate": '01/05/1953',
         "rating": 4.5,
-        "cover": "/assets/images/books/10588193.jpg",
-        "tags": "classic, poetry, mahabharata, karna, hindi"
+        
+        "tags": "classic, poetry, mahabharata, karna, hindi",
+        "review":"good"
       },
     ];
-
-
-  }
-
-  toggleImages(){
-    this.showImages=!this.showImages;
-  }
-
-  ngOnInit(): void {
+    
   }
 
 
-  public imageWidth=120;
-  public maxWidth=200; //should never go above
-  public minWidth=50;  //should never go below this
-  public delta=10;  //each click should increase/decrease by this value
+ 
+  
+  
+  onImageWidthInfoChanged(r: RangeInfo){
 
-  increaseSize(){
-    this.change(this.imageWidth+this.delta);
+    console.log(r);
+    
   }
-  decreaseSize(){
-    this.change(this.imageWidth-this.delta);
-  }
-
-  change(newSize){
-    if(newSize<this.minWidth)
-      newSize=this.minWidth;
-    else if(newSize>this.maxWidth)
-      newSize=this.maxWidth;
-    this.imageWidth=newSize;
-
-  }
+  
 
 }
