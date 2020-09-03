@@ -10,7 +10,6 @@ const server=process.env.BMS_DB_SERVER;
 const dbname='AuthorDb';
 const collectionName='author';
 
-
 const uri = `mongodb+srv://${username}:${password}@${server}/${dbname}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true,useUnifiedTopology: true });
 

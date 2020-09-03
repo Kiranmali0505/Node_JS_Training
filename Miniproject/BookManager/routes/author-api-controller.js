@@ -60,9 +60,11 @@ var router = express.Router();
 
 //all this will be mapped /authors/
 router.get('/', getAuthorList);
-router.post('/', addAuthor);
-router.get('/:authorId', getAuthorById);
-router.delete('/:authorId', removeAuthor);
+
+router.post('/create', addAuthor);
+
+router.get('/deatils/:authorId', getAuthorById);
+router.delete('/delete/:authorId', removeAuthor);
 
 
 

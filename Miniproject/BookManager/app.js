@@ -35,8 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/authors',authorRouter);
-app.use('/api/authors', authorApiRouter);
-app.use('/api/books', bookApiRouter);
+app.use('/ApiAuthor', authorApiRouter);
+app.use('/books', bookApiRouter);
 
 
 
