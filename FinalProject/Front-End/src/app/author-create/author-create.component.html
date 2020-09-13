@@ -1,0 +1,45 @@
+
+
+<h1 class='page-title'>Add New Author</h1>
+
+<div class='container'>
+
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Author-Id:</label>
+            <input type="text" formControlName="Id" placeholder="Author-ID" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Id.errors }">
+            <div *ngIf="submitted && f.Id.errors">
+              <div *ngIf="f.Id.errors.required">Author-ID is required</div>
+            </div>
+          </div>
+        <div class="form-group">
+          <label>Name:</label>
+          <input type="text" formControlName="name" placeholder="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+          <div *ngIf="submitted && f.name.errors">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="text" formControlName="email" placeholder="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+            <div *ngIf="submitted && f.email.errors">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+            </div>
+          </div>
+        <div class="form-group">
+          <label>Biography:</label>
+          <input type="text" formControlName="biography" placeholder="Biography" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.biography.errors }">
+          <div *ngIf="submitted && f.biography.errors">
+            <div *ngIf="f.author.biography.required">Biography is required</div>
+          </div>
+        </div>
+        
+    
+       
+    
+        <button type="submit"  class="btn btn-info">Save</button>
+      </form>
+
+</div>
+
+

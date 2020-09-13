@@ -1,0 +1,58 @@
+
+<h1 class='page-title'>Add New Book</h1>
+
+<div class='container'>
+
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Book-Id:</label>
+            <input type="text" formControlName="bookId" placeholder="Book-ID" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bookId.errors }">
+            <div *ngIf="submitted && f.bookId.errors">
+              <div *ngIf="f.bookId.errors.required">Book-ID is required</div>
+            </div>
+          </div>
+        <div class="form-group">
+          <label>Title:</label>
+          <input type="text" formControlName="title" placeholder="Title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+          <div *ngIf="submitted && f.title.errors">
+            <div *ngIf="f.title.errors.required">Title is required</div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label>Author:</label>
+          <input type="text" formControlName="author" placeholder="Author" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.author.errors }">
+          <div *ngIf="submitted && f.author.errors">
+            <div *ngIf="f.author.errors.required">Author is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label>Cover:</label>
+            <input type="text" formControlName="cover" placeholder="cover URL" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cover.errors }">
+            <div *ngIf="submitted && f.cover.errors">
+              <div *ngIf="f.cover.errors.required">Cover is required</div>
+            </div>
+          </div>
+    
+        <div class="form-group">
+          <label>Price ($):</label>
+          <input type="text" formControlName="price" placeholder="Price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }">
+          <div *ngIf="submitted && f.price.errors">
+            <div *ngIf="f.price.errors.required">Price is required</div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+            <label>Rating:</label>
+            <input type="text" formControlName="rating" placeholder="Rating" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.rating.errors }">
+            <div *ngIf="submitted && f.rating.errors">
+              <div *ngIf="f.rating.errors.required">Rating is required</div>
+            </div>
+        </div>
+    
+        <button type="submit"  class="btn btn-info">Save</button>
+      </form>
+
+</div>
+
+

@@ -1,0 +1,73 @@
+
+<h1 ca-highlight class="page-title">Books</h1>
+<div>
+    <button (click)="addBooks()" class="btn btn-info">Add Book</button>
+  </div> 
+<input type='checkbox'  [checked]='showImages'  (click)='toggleImages()'  /> Show Covers
+
+<div class="table-responsive table-container">  
+    <table class="table table-primary table-hover table-striped">  
+      <thead class="thead-light"> 
+        <tr>
+            <th *ngIf='showImages'>
+                Poster
+                <ca-range 
+                [min]='75' 
+                [max]='200' 
+                [delta]='15' 
+                
+                [(value)]='imageWidth' 
+                
+                
+
+
+                (changed)='onImageWidthInfoChanged($event)'
+                ></ca-range>
+            </th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+           
+            <th>Rating</th>
+           
+            
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor='let book of books'  >
+
+
+
+            <td *ngIf='showImages'  (click)="getByID(book)"  >  
+                
+                <img [hidden]='!showImages' [src]='book.cover|prefix:"/assets/images/books/"'  [style.width.px]='imageWidth' >
+            </td>
+            <td  >{{book.Title|uppercase}}</td>
+            <td >{{book. Author|lowercase}} </td>
+            <td>{{book.price|currency:'INR'}}</td>
+            
+            <td>
+                <ca-rating value='{{book.rating}}'  ></ca-rating>
+                {{book.rating|ratingadvise}} 
+
+            </td>
+           <!--<td>  
+               
+                <button (click)="updateBooks(book)" class="btn btn-info"> Edit</button>  
+               
+              </td>--> 
+            <td>  
+                <button (click)="deleteBooks(book)"  class="btn btn-info"> Delete</button>  
+               
+               
+              </td>  
+        </tr>
+      
+        
+    </tbody>
+</table>
+
+
+<hr/>
+

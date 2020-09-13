@@ -1,0 +1,51 @@
+<div class="container col-md-12"> 
+   
+  <h2 ca-highlight class="page-title">Authors</h2>  
+  <div>
+    <button (click)="addAuthor()" class="btn btn-info">Add Author</button>
+  </div> 
+  <div class="table-responsive table-container">  
+    <table class="table table-primary table-hover table-striped">  
+      <thead class="thead-light"> 
+        <tr> 
+          <th *ngIf='showImages'>
+            Poster
+            <ca-range 
+            [min]='75' 
+            [max]='200' 
+            [delta]='15' 
+            
+            [(value)]='imageWidth' 
+            (changed)='onImageWidthInfoChanged($event)'
+            ></ca-range>
+        </th> 
+          <th>Name</th>  
+         
+          <th>Email</th> 
+          <th>Biography</th>
+          <th>Action</th> 
+          
+        </tr>  
+      </thead>  
+      <tbody>  
+        <tr *ngFor="let author of authors"> 
+          <td *ngIf='showImages' (click)="getByID(author)"  >  
+                
+            <img [hidden]='!showImages'  [src]='author.photograph|prefix:"/assets/images/books/"'  [style.width.px]='imageWidth' >
+        </td>
+          <td >{{author.name}}</td>  
+          <td>{{author.email}}</td>
+          <td>{{author.biography}}</td>
+          <!--<td>  
+           
+            <button (click)="updateAuthor(author)"  class="btn btn-info"> Edit</button>  
+          </td>-->
+          <td>  
+            <button (click)="deleteAuthor(author)" class="btn btn-info"  style="margin-right: 20px;"> Delete</button>  
+           
+        </tr>  
+      </tbody>  
+    </table>  
+  </div> 
+   
+</div> 

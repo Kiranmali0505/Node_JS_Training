@@ -1,0 +1,24 @@
+
+<div class='row'>
+
+   
+    <div class="col-md-6">
+        <img  src='{{book.cover|prefix:"/assets/images/books/"}}' class='cover-image' />
+        
+    </div>
+    
+    <div class="col-md-6">
+        <ul class='meta-list'>
+            <li ca-rainbow-color >Title: {{book.Title}}</li>
+            <li ca-rainbow-color >Author: {{book.Author}}</li>
+            <li ca-rainbow-color>Price: {{book.price}}</li>
+            <li ca-rainbow-color>Rating: <ca-rating [value]='book.rating' ></ca-rating> {{book.rating}}</li>            
+            <li>Our Recommendation: 
+                <p ca-rainbow-color>{{book.rating|ratingadvise}}  </p>
+            </li>
+        </ul>
+       
+        <hr/>
+    </div>
+    
+</div>
